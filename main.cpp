@@ -20,17 +20,20 @@ public:
     }
 };
 
-class Enemy {
+Player player = Player();
+
+class Bullet {
 public:
+    Vector2 position = player.position;
     
+    void Draw() {
+        
+    }
 };
 
 int main() {
     InitWindow(800, 800, "Space Invader (nah phogn'd win)");
     SetTargetFPS(60);Image image = LoadImage("assets/player.png");
-
-    Player player = Player();
-
 
     while (WindowShouldClose() == false) {
         BeginDrawing();
