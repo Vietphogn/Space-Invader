@@ -13,7 +13,7 @@ public:
     }
 
     void Draw() {
-        DrawRectangle(position.x, position.y, 4, 15, {243, 216, 63, 255});
+        DrawRectangle(position.x, position.y, 4, 15, WHITE);
     }
 private:
     Vector2 position;
