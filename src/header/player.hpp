@@ -42,4 +42,14 @@ public:
     void Fire() {
         bullets.push_back(Bullet({position.x + image.width - 2, position.y}, 6));
     }
+
+    Rectangle getRect() {
+        return {position.x, position.y, float(texture.width * 2), float(texture.height * 2)};
+    }
+
+    void Reset() {
+        position.x = (GetScreenWidth() - image.width) / 2;
+        position.y = GetScreenHeight() - image.height * 2;
+        bullets.clear();
+    }
 };

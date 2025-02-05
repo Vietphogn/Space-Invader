@@ -10,12 +10,20 @@ public:
         this -> position = position;
     }
 
-    void Update() {
+    void UnloadEnemyTexture() {
+        UnloadTexture(texture);
+    }
 
+    void Update(int direction) {
+        position.x += direction;
     }
 
     void Draw() {
         DrawTextureEx(texture, position, 0.0f, 3.0f, WHITE);
+    }
+
+    Rectangle getRect() {
+        return {position.x, position.y, float(texture.width * 3), float(texture.height * 3)};
     }
 
 private:

@@ -23,7 +23,7 @@ public:
     void Update() {
         position.y -= speed;
         if (active) {
-            if (position.y < 0) {
+            if (position.y < 0 || position.y > GetScreenHeight()) {
                 active = false;
             }
         }
@@ -33,6 +33,10 @@ public:
         if (active) {
             DrawTextureEx(texture, position, 0.0f, 4.0f, WHITE);
         }
+    }
+
+    Rectangle getRect() {
+        return {position.x, position.y, float(texture.width * 4), float(texture.height * 4)};
     }
 private:
     Vector2 position;
