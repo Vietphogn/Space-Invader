@@ -18,8 +18,8 @@ int main() {
         game.HandleInput();
 
         ClearBackground(BLACK);
-        game.Draw();
         bullet.Draw();
+        game.Draw();
 
         EndDrawing();
     }

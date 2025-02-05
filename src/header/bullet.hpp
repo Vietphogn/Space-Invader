@@ -15,7 +15,7 @@ public:
     }
 
     ~Bullet() {
-        //UnloadTexture(texture);
+        UnloadTexture(texture);
     }
 
     void Update() {
