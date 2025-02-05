@@ -19,7 +19,7 @@ int main() {
 
         ClearBackground(BLACK);
         game.Draw();
-        bullet.Draw();
+        bullet.Draw(); //idk
 
         EndDrawing();
     }
