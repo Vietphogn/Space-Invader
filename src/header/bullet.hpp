@@ -9,13 +9,13 @@ public:
     Bullet(Vector2 position, int speed) {
         this -> position = position;
         this -> speed = speed;
-        image = LoadImage("../../assets/bullet.png");
+        image = LoadImage("assets/bullet.png");
         texture = LoadTextureFromImage(image);
         UnloadImage(image);
     }
 
     ~Bullet() {
-        UnloadTexture(texture);
+        //UnloadTexture(texture);
     }
 
     void Update() {
