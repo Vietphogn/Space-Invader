@@ -1,25 +1,28 @@
 #pragma once
 #include "raylib.h"
+#include "bullet.hpp"
+#include <vector>
 
 class Player {
 public:
     Vector2 position;
     Texture2D texture;
     Image image;
+    std::vector<Bullet> bullets;
 
     Player() {
         image = LoadImage("../../assets/player.png");
         texture = LoadTextureFromImage(image);
         UnloadImage(image);
         position.x = (GetScreenWidth() - image.width) / 2;
-        position.y = GetScreenHeight() - image.height;
+        position.y = GetScreenHeight() - image.height * 2;
     }
     ~Player() {
         UnloadTexture(texture);
     }
 
     void Draw() {
-        DrawTexture(texture, position.x, position.y, WHITE);
+        DrawTextureEx(texture, position, 0.0f, 2.0f, WHITE);
     }
 
     void MoveLeft() {
@@ -37,6 +40,6 @@ public:
     }
 
     void Fire() {
-
+        bullets.push_back(Bullet({position.x + image.width - 2, position.y}, 6));
     }
 };
